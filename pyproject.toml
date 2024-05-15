@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "django-project-template"
+version = "0.1.0"
+description = ""
+authors = ["RG1ee <niwows@yandex.ru>"]
+readme = "README.md"
+packages = [
+  {include = "src"}
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = ">4.2.2"
+djangorestframework = ">3.14.0"
+python-dotenv = ">1.0.0"
+psycopg2-binary = ">2.9.6"
+
+
+[tool.poetry.group.dev.dependencies]
+ipython = "^8.14.0"
+django-extensions = "^3.2.3"
+django-stubs = "^4.2.1"
+djangorestframework-stubs = "^3.14.1"
+pre-commit = "^3.3.3"
+pytest = "^7.3.2"
+pytest-django = "^4.5.2"
+ruff = ">0.0.272"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.django-stubs]
+django_settings_module = "src.core.settings"
+ignore_missing_model_attributes = true
+
+[tool.poetry.scripts]
+core = "src.manage:main"
