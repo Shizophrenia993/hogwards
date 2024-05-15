@@ -1,0 +1,77 @@
+{% extends 'login_page.html' %}
+{% block title %}Регистрация{% endblock %}
+{% block content %}
+<div class="flex min-h-[100dvh] items-center justify-center bg-gray-100 py-12 px-4 dark:bg-gray-950">
+    <div class="w-full max-w-md space-y-8">
+      <div>
+        <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-50">
+          Создайте учетную запись
+        </h2>
+        <p class="mt-2 text-center text-sm text-gray-600 dark:text-gray-400">
+          Или
+          <a
+            class="font-medium text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300"
+            href="{% url 'login' %}"
+          >
+            Войти
+          </a>
+        </p>
+      </div>
+      <form class="space-y-6" action="#" method="POST">
+        {% csrf_token %}
+        <div>
+          <label for="username" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            Имя пользователя
+          </label>
+          <div class="mt-1">
+            <input
+              id="username"
+              required=""
+              class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300 dark:placeholder-gray-500 dark:focus:border-indigo-400 dark:focus:ring-indigo-400"
+              type="text"
+              name="username"
+            />
+          </div>
+          <label for="first_name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            Имя
+          </label>
+          <div class="mt-1">
+            <input
+              id="first_name"
+              required=""
+              class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300 dark:placeholder-gray-500 dark:focus:border-indigo-400 dark:focus:ring-indigo-400"
+              type="text"
+              name="first_name"
+            />
+          </div>
+        </div>
+        <div>
+          <label for="password" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            Пароль
+          </label>
+          <div class="mt-1">
+            <input
+              id="password"
+              autocomplete="current-password"
+              required=""
+              class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-300 dark:placeholder-gray-500 dark:focus:border-indigo-400 dark:focus:ring-indigo-400"
+              type="password"
+              name="password"
+            />
+          </div>
+        </div>
+        {% if error %}
+            <p class="text-red-500 font-bold mt-2">{{ error }}</p>
+        {% endif %}
+        <div>
+          <button
+            type="submit"
+            class="flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-indigo-500 dark:hover:bg-indigo-600 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800"
+          >
+            Войти
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  {% endblock %}

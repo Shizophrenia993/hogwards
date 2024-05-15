@@ -10,6 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = os.getenv("DEBUG", default=1)
 ALLOWED_HOSTS = ["*"]
+TEMPLATE_DIR = os.path.join(BASE_DIR,"templates")
 
 
 INSTALLED_APPS = [
@@ -44,7 +45,7 @@ ROOT_URLCONF = "src.core.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [TEMPLATE_DIR],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
