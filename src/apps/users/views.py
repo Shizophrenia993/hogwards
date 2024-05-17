@@ -15,7 +15,7 @@ def login_view(request):
             print(user)
             if user is not None:
                 login(request, user)
-                print("logged in") # TODO redirect to index
+                return redirect("main")
             else:
                 return render(request, 'login.html', {'error': 'Неверное имя пользователя или пароль'})
     else:
