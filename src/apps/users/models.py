@@ -8,3 +8,7 @@ class User(AbstractUser, PermissionsMixin):
     book_reservations = models.ManyToManyField(
         "books.Book", related_name="reservations"
     )
+    image = models.OneToOneField("images.Image", on_delete=models.CASCADE, null=True)
+
+    def __str__(self):
+        return self.username

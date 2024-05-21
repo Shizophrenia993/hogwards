@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
+from django.urls import reverse_lazy
 
 from src.apps.users.forms import LoginForm, RegisterForm
 from src.apps.users.models import User
@@ -32,3 +34,10 @@ def register_view(request):
     else:
         form = RegisterForm()
     return render(request, 'register.html', {'form': form})
+
+
+@login_required(login_url=reverse_lazy("login"))
+def profile_view(request):
+    user = request.user
+    context = {'user': user}
+    return render(request, 'profile.html', context=context)

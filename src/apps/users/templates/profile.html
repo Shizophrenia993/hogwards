@@ -1,0 +1,224 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="flex flex-col items-center justify-center gap-6 px-4 py-8 md:flex-row md:gap-12 md:px-6 lg:py-12">
+    <div class="flex flex-col items-center gap-4">
+      <span class="relative flex shrink-0 overflow-hidden rounded-full h-24 w-24">
+        <img class="aspect-square h-full w-full" alt="User Avatar" src="{{ user.image.photo.url }}" />
+      </span>
+      <div class="text-center">
+        <h1 class="text-2xl font-bold">{{ user.username }}</h1>
+        <p class="text-gray-500 dark:text-gray-400">{{ user.role }}</p>
+      </div>
+    </div>
+    <div class="grid w-full max-w-md grid-cols-3 gap-4 text-center">
+      <div>
+        <p class="text-2xl font-bold">24</p>
+        <p class="text-gray-500 dark:text-gray-400">Books Read</p>
+      </div>
+      <div>
+        <p class="text-2xl font-bold">3 years</p>
+        <p class="text-gray-500 dark:text-gray-400">Membership</p>
+      </div>
+      <div>
+        <p class="text-2xl font-bold">2</p>
+        <p class="text-gray-500 dark:text-gray-400">Orders</p>
+      </div>
+    </div>
+  </div>
+  <div class="border-t py-8">
+    <div class="container mx-auto px-4 md:px-6">
+      <h2 class="mb-4 text-xl font-bold">Order History</h2>
+      <div class="grid gap-4">
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
+          <div class="flex flex-col space-y-1.5 p-6">
+            <h3 class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">Order #123456</h3>
+            <p class="text-sm text-muted-foreground">Placed on May 15, 2023</p>
+          </div>
+          <div class="p-6">
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <h3 class="text-lg font-medium">Books Ordered</h3>
+                <ul class="space-y-2">
+                  <li>
+                    <div class="flex items-center gap-2">
+                      <img
+                        src="https://i.pinimg.com/564x/30/3e/c4/303ec431195b0d33c5fc83cf5a8bf002.jpg"
+                        width="50"
+                        height="70"
+                        alt="Book Cover"
+                        class="rounded"
+                        style="aspect-ratio: 50 / 70; object-fit: cover;"
+                      />
+                      <div>
+                        <p class="font-medium">The Great Gatsby</p>
+                        <p class="text-gray-500 dark:text-gray-400">by F. Scott Fitzgerald</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="flex items-center gap-2">
+                      <img
+                        src="https://i.pinimg.com/originals/89/79/a8/8979a8e97c70b4e8e1099ea0b47cbff2.jpg"
+                        width="50"
+                        height="70"
+                        alt="Book Cover"
+                        class="rounded"
+                        style="aspect-ratio: 50 / 70; object-fit: cover;"
+                      />
+                      <div>
+                        <p class="font-medium">To Kill a Mockingbird</p>
+                        <p class="text-gray-500 dark:text-gray-400">by Harper Lee</p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="text-lg font-medium">Order Details</h3>
+                <div class="space-y-2">
+                  <div>
+                    <p class="text-gray-500 dark:text-gray-400">Subtotal:</p>
+                    <p>2500₽</p>
+                  </div>
+                  <div>
+                    <p class="text-gray-500 dark:text-gray-400">Shipping:</p>
+                    <p>500₽</p>
+                  </div>
+                  <div>
+                    <p class="text-gray-500 dark:text-gray-400">Total:</p>
+                    <p>3000₽</p>
+                  </div>
+                  <div>
+                    <p class="text-gray-500 dark:text-gray-400">Status:</p>
+                    <p>Отправлен</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
+          <div class="flex flex-col space-y-1.5 p-6">
+            <h3 class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">Order #987654</h3>
+            <p class="text-sm text-muted-foreground">Placed on March 22, 2023</p>
+          </div>
+          <div class="p-6">
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <h3 class="text-lg font-medium">Books Ordered</h3>
+                <ul class="space-y-2">
+                  <li>
+                    <div class="flex items-center gap-2">
+                      <img
+                        src="https://i.pinimg.com/736x/15/86/96/158696e0f1351efc33afbf7651fabdec--penguin-books-pride-and-prejudice.jpg"
+                        width="50"
+                        height="70"
+                        alt="Book Cover"
+                        class="rounded"
+                        style="aspect-ratio: 50 / 70; object-fit: cover;"
+                      />
+                      <div>
+                        <p class="font-medium">Pride and Prejudice</p>
+                        <p class="text-gray-500 dark:text-gray-400">by Jane Austen</p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="text-lg font-medium">Order Details</h3>
+                <div class="space-y-2">
+                  <div>
+                    <p class="text-gray-500 dark:text-gray-400">Subtotal:</p>
+                    <p>1299₽</p>
+                  </div>
+                  <div>
+                    <p class="text-gray-500 dark:text-gray-400">Shipping:</p>
+                    <p>499₽</p>
+                  </div>
+                  <div>
+                    <p class="text-gray-500 dark:text-gray-400">Total:</p>
+                    <p>1798₽</p>
+                  </div>
+                  <div>
+                    <p class="text-gray-500 dark:text-gray-400">Status:</p>
+                    <p>Доставлен</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto px-4 py-8 md:px-6 md:py-12">
+    <h2 class="mb-4 text-xl font-bold">Recommended Books</h2>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
+        <div class="p-6 flex flex-col items-center gap-2">
+          <img
+            src="https://i.pinimg.com/564x/30/3e/c4/303ec431195b0d33c5fc83cf5a8bf002.jpg"
+            width="235"
+            height="325"
+            alt="Book Cover"
+            class="rounded"
+            style="aspect-ratio: 150 / 210; object-fit: cover;"
+          />
+          <div class="text-center">
+            <h3 class="text-lg font-medium">The Great Gatsby</h3>
+            <p class="text-gray-500 dark:text-gray-400">by F. Scott Fitzgerald</p>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
+        <div class="p-6 flex flex-col items-center gap-2">
+          <img
+            src="https://i.pinimg.com/originals/89/79/a8/8979a8e97c70b4e8e1099ea0b47cbff2.jpg"
+            width="235"
+            height="325"
+            alt="Book Cover"
+            class="rounded"
+            style="aspect-ratio: 150 / 210; object-fit: cover;"
+          />
+          <div class="text-center">
+            <h3 class="text-lg font-medium">To Kill a Mockingbird</h3>
+            <p class="text-gray-500 dark:text-gray-400">by Harper Lee</p>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
+        <div class="p-6 flex flex-col items-center gap-2">
+          <img
+            src="https://i.pinimg.com/736x/15/86/96/158696e0f1351efc33afbf7651fabdec--penguin-books-pride-and-prejudice.jpg"
+            width="235"
+            height="325"
+            alt="Book Cover"
+            class="rounded"
+            style="aspect-ratio: 150 / 210; object-fit: cover;"
+          />
+          <div class="text-center">
+            <h3 class="text-lg font-medium">Pride and Prejudice</h3>
+            <p class="text-gray-500 dark:text-gray-400">by Jane Austen</p>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
+        <div class="p-6 flex flex-col items-center gap-2">
+          <img
+            src="https://i.pinimg.com/736x/bc/12/e0/bc12e06867cfe3f3c7f3cb382aad333b.jpg"
+            width="235"
+            height="325"
+            alt="Book Cover"
+            class="rounded"
+            style="aspect-ratio: 150 / 210; object-fit: cover;"
+          />
+          <div class="text-center">
+            <h3 class="text-lg font-medium">1984</h3>
+            <p class="text-gray-500 dark:text-gray-400">by George Orwell</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
