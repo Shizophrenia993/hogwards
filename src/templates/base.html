@@ -12,13 +12,10 @@
         {% include 'header.html' %}
     {% endif %}
         
-    <main>
+    <main class="min-h-screen">
         {% block content %}
         {% endblock %}
     </main>
-
-    <!-- <footer>
-        <p>&copy; 2024 Your Website</p>
-    </footer> -->
+    {% include 'footer.html' %}
 </body>
 </html>
