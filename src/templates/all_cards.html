@@ -1,8 +1,5 @@
-{% extends 'base.html' %}
-{% block content %}
-<div class="flex flex-row flex-wrap">
-    {% for book in books %}
-        {% include 'book_card.html' %}
-    {% endfor %}
+{% extends 'base.html' %} {% block content %}
+<div class="flex flex-row">
+  {% for book in books %} {% include 'book_card.html' %} {% endfor %}
 </div>
 {% endblock %}

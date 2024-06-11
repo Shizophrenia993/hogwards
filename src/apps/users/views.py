@@ -39,5 +39,6 @@ def register_view(request):
 @login_required(login_url=reverse_lazy("login"))
 def profile_view(request):
     user = request.user
-    context = {'user': user}
+    reservations = user.book_reservations.all()
+    context = {'user': user, 'reservations': reservations}
     return render(request, 'profile.html', context=context)

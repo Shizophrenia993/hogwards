@@ -15,3 +15,7 @@ def recomendation_book_view(request):
 
 class IndexView(TemplateView):
     template_name = "index.html"
+
+
+class AboutView(TemplateView):
+    template_name = "about.html"

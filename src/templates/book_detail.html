@@ -1,29 +1,30 @@
-{% extends 'base.html' %}
-{% block content %}
-<div class="flex flex-col md:flex-row items-start gap-8 max-w-6xl mx-auto py-12 px-4 md:px-6">
-    <div class="flex-shrink-0">
-      <img
-        src="{{ book.image.photo.url }}"
-        alt="Book Cover"
-        width="350"
-        height="500"
-        class="rounded-lg shadow-lg"
-        style="aspect-ratio: 350 / 500; object-fit: cover;"
-      />
+{% extends 'base.html' %} {% block content %}
+<div
+  class="flex flex-col md:flex-row items-start gap-8 max-w-6xl mx-auto py-12 px-4 md:px-6"
+>
+  <div class="flex-shrink-0">
+    <img
+      src="{{ book.image.photo.url }}"
+      alt="Book Cover"
+      width="350"
+      height="500"
+      class="rounded-lg shadow-lg"
+      style="aspect-ratio: 350 / 500; object-fit: cover"
+    />
+  </div>
+  <div class="flex-1 space-y-6">
+    <div>
+      <h1 class="text-4xl font-bold">{{ book.title }}</h1>
     </div>
-    <div class="flex-1 space-y-6">
-      <div>
-        <h1 class="text-4xl font-bold">{{ book.title }}</h1>
-        <!-- <p class="text-gray-500 text-lg">Автор: {{ author }}</p> -->
-      </div>
-      <p class="text-gray-700 text-lg">
-        {{ book.description }}
-      </p>
-      <div class="flex gap-4">
-        <button class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-11 rounded-md px-8">
-          Добавить в мою библиотеку
-        </button>
-      </div>
+    <p class="text-gray-700 text-lg">{{ book.description }}</p>
+    <div class="flex gap-4">
+      <button
+        class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-11 rounded-md px-8"
+        onclick="location.href = '/add-book/{{ book.id }}';"
+      >
+        Добавить в мою библиотеку
+      </button>
     </div>
   </div>
+</div>
 {% endblock %}

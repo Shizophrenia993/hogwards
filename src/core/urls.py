@@ -9,6 +9,7 @@ from src.apps.pages import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.recomendation_book_view, name="home"),
+	path("about/", views.AboutView.as_view(), name="about"),
     path("", include("src.apps.books.urls")),
     path("", include("src.apps.users.urls")),
 ]

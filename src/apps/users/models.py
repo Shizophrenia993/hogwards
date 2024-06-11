@@ -9,6 +9,14 @@ class User(AbstractUser, PermissionsMixin):
         "books.Book", related_name="reservations"
     )
     image = models.OneToOneField("images.Image", on_delete=models.CASCADE, null=True)
+    count_read_books = models.IntegerField(default=0)
+
+    class Meta:
+        verbose_name = "Пользователь"
+        verbose_name_plural = "Пользователи"
 
     def __str__(self):
         return self.username
+    
+    def membership(self):
+        return f"{self.date_joined.date()}"
